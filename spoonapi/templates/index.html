@@ -26,7 +26,27 @@
     <section>
         <div class="container">
             <div class="h1 display-1">The Spoon API</div>
-            <p class="text-muted">This API makes a call to the spoonacular API and displays Chinese cuisine</p>
+            <p class="text-muted">This API makes a call to the spoonacular API and displays different cuisines</p>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <select class="form-select" aria-label="Default select example" name="all-cuisines">
+                    <option selected>Select a cuisine</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="African">African</option>
+                    <option value="Cajun">Cajun</option>
+                    <option value="British">British</option>
+                    <option value="Irish">Irish</option>
+                    <option value="French">French</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Jewish">Jewish</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Southern">Southern</option>
+                  </select>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
             <div class="row ">
                 {% for x in results %}
                 <div class="col-md-4 p-3">
